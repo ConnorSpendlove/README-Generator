@@ -6,50 +6,81 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown')
 
-// TODO: Create an array of questions for user input
+// Array of questions
 const questions = [
     {
         type: "input",
         name: "title",
         message: "Please enter the title of your application.",
+        validate: function(answer) {
+            if (answer.length < 1){
+               return console.log("You must enter a title name.");
+            }
+            return true;
+        }
     },
     {
         type: "input",
         name: "description",
         message: "Please enter a description for your application",
+        validate: function(answer) {
+            if (answer.length < 1){
+               return console.log("You must enter a description.");
+            }
+            return true;
+        }
     },
     {
         type: "input",
         name: "installation",
         message: "Please provide installation instructions. If none, enter N/A",
+        validate: function(answer) {
+            if (answer.length < 1){
+               return console.log("Please enter instructions or enter N/A");
+            }
+            return true;
+        }
     },
     {
         type: "input",
         name: "usage",
         message: "Please provide instructions on how to use you application."
+        
     },
     {
-        type: "input",
+        type: "list",
         name: "license",
-        message: "Please enter the license type of you application.",
+        message: "Please enter the license type of your application.",
+        choices: ['AGPL_v3', 'GPLv3', 'LGPL_v3', 'MPL_2.0', 'Apache_2.0', 'MIT', 'Boost_1.0', 'Unlicense'],
     },
     {
         type: "input",
         name: "contributing",
         message: "Please enter guidelines on how people can contibute to this application. If none, enter N/A",
-
+        validate: function(answer) {
+            if (answer.length < 1){
+               return console.log("You must enter guidelines or enter N/A.");
+            }
+            return true;
+        }
 
     },
     {
         type: "input",
         name: "tests",
-        message: "Please provide intructions on how to test this application. If none, enter N/A"
+        message: "Please provide instructions on how to test this application. If none, enter N/A",
+        validate: function(answer) {
+            if (answer.length < 1){
+               return console.log("You must enter instructions or enter N/A.");
+            }
+            return true;
+        }
 
     },
     {
         type: "input",
         name: "github",
-        message: "Please enter your GitHub username"
+        message: "Please enter your GitHub username (no @ sign)"
     },
     {
         type: "input",
@@ -70,41 +101,9 @@ function writeToFile(fileName, data) {
 
 // This function takes the user data answered in the console, and generates a readme.md file custom made to that information.
 function init() {
-    inquirer.prompt(questions).then(answers => {
-        const readme = `
-    # ${answers.title}
-    
-    ## Description
-    ${answers.description}
-    
-    ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-    - [Questions](#questions)
-    
-    ## Installation
-    ${answers.installation}
-    
-    ## Usage
-    ${answers.usage}
-    
-    ## License
-    This application is licensed under the ${answers.license} license.
-    
-    ## Contributing
-    ${answers.contributing}
-    
-    ## Tests
-    ${answers.tests}
-    
-    ## Questions
-    For questions, please contact me [Here](mailto:${answers.email}).
-    Additionally view my GitHub account [Here](github.com/${answers.github})
-    `;
-        writeToFile('README.md', readme);
+    inquirer.prompt(questions)
+    .then(function(data) {
+      writeToFile("README.md", generateMarkdown(data));
       });
     }
 
