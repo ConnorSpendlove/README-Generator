@@ -12,6 +12,7 @@ const questions = [
         type: "input",
         name: "title",
         message: "Please enter the title of your application.",
+        // validates if an answer is put
         validate: function(answer) {
             if (answer.length < 1){
                return console.log("You must enter a title name.");
@@ -51,6 +52,7 @@ const questions = [
         type: "list",
         name: "license",
         message: "Please enter the license type of your application.",
+        // choices instead of input
         choices: ['AGPL_v3', 'GPLv3', 'LGPL_v3', 'MPL_2.0', 'Apache_2.0', 'MIT', 'Boost_1.0', 'Unlicense'],
     },
     {
@@ -89,7 +91,7 @@ const questions = [
     }
 ];
 
-// Creates a new file
+// Creates a new file by accessing the fs
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
         if (err) {
@@ -98,8 +100,7 @@ function writeToFile(fileName, data) {
         console.log(`Successfully generated README.md`);
       });
     }
-
-// This function takes the user data answered in the console, and generates a readme.md file custom made to that information.
+// This function takes the data generated in the generateMarkdown.js file and passes in the user data to the writeToFile function above.
 function init() {
     inquirer.prompt(questions)
     .then(function(data) {

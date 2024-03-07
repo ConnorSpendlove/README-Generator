@@ -1,8 +1,16 @@
+<div align="center">
+  
+  # SVG Logo Generator
 
-# README Generator ![License](https://img.shields.io/badge/license-MIT-yellow.svg)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![Node.js Badge](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=flat)](https://nodejs.org/en) 
+  [![Jest Badge](https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=fff&style=flat)](https://jestjs.io/)
+  
+</div>
+
   
 ## Description
-This application allows the user to generate a high quality README.md file for their project, using Node.js.
+This application takes user data by using Node.js with npm Inquirer to create a simple custom SVG logo. 
   
 ## Table of Contents
 - [Installation](#installation)
@@ -13,10 +21,15 @@ This application allows the user to generate a high quality README.md file for t
 - [Questions](#questions)
   
 ## Installation
-To install this application, first download Node.js here [Node.js Download](https://nodejs.org/en/download). Then use "git clone" to clone this repository to your local device. Then open the integrated terminal and type "npm i inquirer".
+- Step 1 - Node.js [download](https://nodejs.org/en/download) 
+- Step 2 - Use "Git Clone" to copy this repository to your local device. 
+- Step 3 - Open the integrated terminal and enter "npm install --save inquirer@^8.0.0" 
+- Step 4 - Open the integreated terminal and enter "npm i --save-dev jest.
   
 ## Usage
-After installing the neccessary tools, type "node index.js" into the terminal. Then answer the questions that are prompted. Lastly, copy the newly generated README file, and paste it into your project.
+- Step 1 - Open the integrated terminal and enter "Node index.js" 
+- Step 2 - Answer the prompts to create your logo. 
+- Step 3 - Download the newly generated logo.svg and enjoy!
   
 ## License
 This project is licensed under the MIT license.
@@ -25,8 +38,8 @@ This project is licensed under the MIT license.
 N/A
   
 ## Tests
-N/A
+After installing Jest, open the integrated terminal and enter "npm test" to make sure the application is functioning. All 3 tests should pass.
   
 ## Questions
-For questions, please contact me here [Email](mailto:Connor.Spendlove44@gmail.com).
+For questions, please contact me here [Email](mailto:Connor.Spendlove@gmail.com).
 Additionally view my GitHub account [Here](https://www.github.com/ConnorSpendlove)
