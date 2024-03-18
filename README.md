@@ -1,16 +1,8 @@
-<div align="center">
-  
-  # SVG Logo Generator
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Node.js Badge](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=flat)](https://nodejs.org/en) 
-  [![Jest Badge](https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=fff&style=flat)](https://jestjs.io/)
-  
-</div>
-
+# Weather Forecast ![License](https://img.shields.io/badge/license-MIT-yellow.svg)
   
 ## Description
-This application takes user data by using Node.js with npm Inquirer to create a simple custom SVG logo. 
+A simple weather forecast built with JavaScript and OpenWeatherMap API's. It allows the user to enter any city to get a 5 day weather forecast.
   
 ## Table of Contents
 - [Installation](#installation)
@@ -21,15 +13,10 @@ This application takes user data by using Node.js with npm Inquirer to create a 
 - [Questions](#questions)
   
 ## Installation
-- Step 1 - Node.js [download](https://nodejs.org/en/download) 
-- Step 2 - Use "Git Clone" to copy this repository to your local device. 
-- Step 3 - Open the integrated terminal and enter "npm install --save inquirer@^8.0.0" 
-- Step 4 - Open the integreated terminal and enter "npm i --save-dev jest.
+N/A
   
 ## Usage
-- Step 1 - Open the integrated terminal and enter "Node index.js" 
-- Step 2 - Answer the prompts to create your logo. 
-- Step 3 - Download the newly generated logo.svg and enjoy!
+Enter a city into the search bar, and hit submit. To view previouslly entered cities, click on them below the search bar.
   
 ## License
 This project is licensed under the MIT license.
@@ -38,8 +25,8 @@ This project is licensed under the MIT license.
 N/A
   
 ## Tests
-After installing Jest, open the integrated terminal and enter "npm test" to make sure the application is functioning. All 3 tests should pass.
+N/A
   
 ## Questions
-For questions, please contact me here [Email](mailto:Connor.Spendlove@gmail.com).
+For questions, please contact me here [Email](mailto:Connor.Spendlove44@gmail.com).
 Additionally view my GitHub account [Here](https://www.github.com/ConnorSpendlove)
